@@ -22,23 +22,27 @@ text = input("Type text here: ")
 # Use TextBlob to determine the sentiment of the text
 sentiment = TextBlob(text).sentiment.polarity
 
-print("Sentiment is :", sentiment)
-
 def get_scale_and_pattern(sentiment):
-    if sentiment > 0.5:
-        scale = [0, 2, 4, 5, 7, 9, 11]  # major scale for positive sentiment
+    if sentiment > 0.7:
+        scale = [0, 2, 4, 5, 7, 9, 11]  # major scale for very positive sentiment
         pattern = random.choices([0, 2, 4, 5, 4, 2], k=10)  #randomly chooses 10 notes from the major scale
-        #pattern = [0, 2, 4, 5, 4, 2]  # pattern for positive sentiment
-    elif sentiment < -0.5:
-        scale = [0, 2, 3, 5, 7, 8, 10]  # minor scale for negative sentiment
-        pattern = random.choices([0, 3, 5, 3, 0, -2], k=10)  #randomly chooses 10 notes from the minor scale
-    else:
+    elif sentiment > 0.3:
+        scale = [0, 2, 4, 5, 7, 9, 10]  # mixed scale for positive sentiment
+        pattern = random.choices([0, 2, 4, 5, 4, 2], k=10)  #randomly chooses 10 notes from the mixed scale
+    elif sentiment > -0.3:
         scale = [0, 2, 3, 5, 7, 9, 10]  # mixed scale for neutral sentiment
         pattern = random.choices([0, 2, 0, 3, 0, 2], k=10)  #randomly chooses 10 notes from the mixed scale
+    elif sentiment > -0.7:
+        scale = [0, 2, 3, 5, 6, 8, 10]  # sad scale for negative sentiment
+        pattern = random.choices([0, -2, -3, -2, 0, -2], k=10)  #randomly chooses 10 notes from the sad scale
+    else:
+        scale = [0, 2, 3, 5, 7, 8, 10]  # minor scale for very negative sentiment
+        pattern = random.choices([0, -3, -5, -3, 0, 2], k=10)  #randomly chooses 10 notes from the angry scale 
     return scale, pattern
 
 # Get the scale and pattern based on sentiment
 scale, pattern = get_scale_and_pattern(sentiment)
 
+print("Sentiment is :", sentiment)
 print("scale: ", scale)
 print("pattern: ", pattern)
