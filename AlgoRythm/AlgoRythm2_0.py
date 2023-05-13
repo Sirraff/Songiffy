@@ -1,5 +1,6 @@
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QTextEdit, QSpinBox, QLabel
-from PySide6.QtCore import Slot
+from PySide6.QtCore import Slot, Qt
+from PySide6 import QtWidgets
 import pygame
 from textblob import TextBlob
 import numpy as np
@@ -31,8 +32,13 @@ class MainWindow(QMainWindow):
         self.button.setGeometry(100, 100, 200, 50)
 
         self.text_edit = QTextEdit(self)
-        self.text_edit.setGeometry(100, 150, 200, 50)
-        self.text_edit.textChanged.connect(self.limit_characters)
+        self.text_edit.setGeometry(100, 100, 200, 50)
+        self.text_edit.textChanged.connect(self.update_character_count)
+        
+         # Label to show the remaining characters
+        self.character_count_label = QLabel("300", self)
+        self.character_count_label.setGeometry(100, 140, 200, 50)
+        self.character_count_label.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
 
         #self.text_label = QLabel("Enter some text:", self)
         #self.text_label.setGeometry(100, 120, 200, 20)
@@ -59,11 +65,31 @@ class MainWindow(QMainWindow):
 
         self.setGeometry(300, 300, 400, 300)
         self.setWindowTitle('Songiffy')
+        
+        # Set the maximum length to 300 characters
+        self.max_lines = 4
+        # Set the maximum length to 300 characters
+        self.max_length = 300
+        
+    def update_character_count(self):
+        # Update the remaining character count label as the user types
+        text = self.text_edit.toPlainText()
+        remaining_characters = self.max_length - len(text)
+        self.character_count_label.setText(str(remaining_characters))
 
     @Slot()
     def play_sound(self):
         # Get the text and its sentiment using TextBlob
         text = self.text_edit.toPlainText()
+        if len(text) > 300:
+            error_dialog = QtWidgets.QMessageBox(self)
+            error_dialog.setWindowTitle("Error")
+            error_dialog.setText("Maximum limit of 300 characters has been reached.")
+            error_dialog.setIcon(QtWidgets.QMessageBox.Warning)
+            error_dialog.setStandardButtons(QtWidgets.QMessageBox.Ok)
+            error_dialog.exec()
+            return
+        
         sentiment = TextBlob(text).sentiment.polarity
 
         # Choose scale based on sentiment
