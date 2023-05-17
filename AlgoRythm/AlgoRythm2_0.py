@@ -1,6 +1,7 @@
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QTextEdit, QSpinBox, QLabel
 from PySide6.QtCore import Slot, Qt
 from PySide6 import QtWidgets
+from PySide6.QtGui import QFont, QFontDatabase
 import pygame
 from textblob import TextBlob
 import numpy as np
@@ -27,9 +28,14 @@ CHORDS = {
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-
+        
+        # Changes backround color
+        self.setStyleSheet("background-color: green;")
+        
         self.button = QPushButton("Songiffy", self)
         self.button.setGeometry(100, 50, 200, 50)
+        self.button.setStyleSheet("background-color: black; color: green;")
+        self.set_button_font()
 
         self.text_edit = QTextEdit(self)
         self.text_edit.setGeometry(100, 100, 200, 50)
@@ -70,6 +76,12 @@ class MainWindow(QMainWindow):
         self.max_lines = 4
         # Set the maximum length to 300 characters
         self.max_length = 300
+       
+    def set_button_font(self):
+        font = QFont("Arial")
+        font.setPointSize(20)
+        font.setStyle(QFont.StyleItalic)
+        self.button.setFont(font)
         
     def update_character_count(self):
         # Update the remaining character count label as the user types
