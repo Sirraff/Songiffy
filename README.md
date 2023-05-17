@@ -1,5 +1,14 @@
-# Text2Song
-Translates text to sound based on sentiment analysis and music theory
+###Text2Song
+What this program does is Translates text to sound based on sentiment analysis and music theory
+
+#Dependencies:
+
+#Installation:
+pip install pygame
+pip install music21
+pip install textblob
+pip install numpy
+
 
 Authors: Rafael L.S Reis, Nicholas Garcia, Jesus Jimenez, Daysi Perez Gutierrez
 
@@ -10,5 +19,4 @@ Trello: https://trello.com/w/text2song/home
 
 Trello invite Link: https://trello.com/invite/text2song/ATTI7cd99d18fc2b4dfeedbb3ed2d4d52d6498B65100
 
-### Hello 
 
