@@ -1,3 +1,24 @@
+""" Short description of this Python module.
+Authors: Rafael Reis, Daisy Gutierrez, Nicholas Garcia, Jesus Jimenez
+Course: CST205
+Date: 5-17-2023
+Work on functions/classes/files:
+Rafael Reis worked on
+Daisy Gutierrez worked on
+Nicholas worked on the visuals of GUI in the MainWindow. Functions include the backround color of the GUI, color of button and text on-
+button that says Songiffy, as well as the font size and text of the word Songiffy.
+Jesus Jimenez worked on
+
+This program changes the pitch of music based on the text you enter in the text box. 
+There is an algorithm that determines the sound based on emotional words used.
+Longer description of this module.
+This program uses an algorithm to determine your mood based on the text you provide in the text box.
+Based on the algorithm results the music will be more low pitch if you are sad and more high pitch if you are happy.
+The text box has a character limit of 300, if you go over the program will give you an error.
+Please press the button above the text box to play the music after you hav written a few words or more with emotion in the text box.
+version.
+"""
+
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QTextEdit, QSpinBox, QLabel
 from PySide6.QtCore import Slot, Qt
 from PySide6 import QtWidgets
