@@ -11,7 +11,7 @@ This program translates the sentiment of text into a musical piece. It uses sent
 * Download and install Python 3.8 or higher from the official website: https://www.python.org/downloads/
 * Clone the repo: git clone https://github.com/Sirraff/Songiffy.git
 * Go to the Songiffy directory: cd Songiffy
-* Install the dependencies: pip install -r requirements.txt
+* Install the dependencies: pip install -r requirements
 ### Contributing:
 **Contributions to this project are welcome! To contribute:**
 1. Fork this repository.
@@ -22,6 +22,8 @@ This program translates the sentiment of text into a musical piece. It uses sent
 Authors: Rafael L.S Reis, Nicholas Garcia, Jesus Jimenez, Daysi Perez Gutierrez
 ### License:
 This program is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for more information.
+
+
 contact: rafael.ls.reis@gmail.com
 
 
