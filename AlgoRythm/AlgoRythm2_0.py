@@ -47,6 +47,7 @@ CHORDS = {
 }
 
 class MainWindow(QMainWindow):
+    """"main window ~ core of GUI""""
     def __init__(self):
         super().__init__()
         
@@ -67,8 +68,8 @@ class MainWindow(QMainWindow):
         self.character_count_label.setGeometry(100, 140, 200, 50)
         self.character_count_label.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
 
-        #self.text_label = QLabel("Enter some text:", self)
-        #self.text_label.setGeometry(100, 120, 200, 20)
+        # self.text_label = QLabel("Enter some text:", self)
+        # self.text_label.setGeometry(100, 120, 200, 20)
 
         self.length_spinbox = QSpinBox(self)
         self.length_spinbox.setGeometry(100, 250, 100, 20)
@@ -105,14 +106,14 @@ class MainWindow(QMainWindow):
         self.button.setFont(font)
         
     def update_character_count(self):
-        # Update the remaining character count label as the user types
+        """Update the remaining character count label as the user types"""
         text = self.text_edit.toPlainText()
         remaining_characters = self.max_length - len(text)
         self.character_count_label.setText(str(remaining_characters))
 
     @Slot()
     def play_sound(self):
-        # Get the text and its sentiment using TextBlob
+        """Get the text and its sentiment using TextBlob"""
         text = self.text_edit.toPlainText()
         if len(text) > 300:
             error_dialog = QtWidgets.QMessageBox(self)
@@ -166,12 +167,13 @@ class MainWindow(QMainWindow):
 
     @Slot()
     def limit_characters(self):
+        """"sets char limit to 300"""
         text = self.text_edit.toPlainText()
         if len(text) > 300:
             self.text_edit.setText(text[:300])
 
 def generate_melody(chord_seq, num_notes):
-    # Generate melody that follows the chord progresion
+    """Generate melody that follows the chord progresion"""
     melody = []
     while len(melody) < num_notes:
         for i in range(len(chord_seq)):
@@ -180,7 +182,7 @@ def generate_melody(chord_seq, num_notes):
     return melody
 
 def create_midi_stream(chord_seq, melody, tempo):
-    # Create a MIDI file from the chord progression and melody
+    """Create a MIDI file from the chord progression and melody"""
     stream = m21.stream.Stream()
     stream.append(m21.tempo.MetronomeMark(number=tempo))
     for i in range(len(chord_seq)):
