@@ -1,22 +1,22 @@
-""" Short description of this Python module.
+"""
+Title: Mood-based Music Modulator
 Authors: Rafael Reis, Daisy Gutierrez, Nicholas Garcia, Jesus Jimenez
 Course: CST205
-Date: 5-17-2023
-Work on functions/classes/files:
-Rafael Reis worked on
-Daisy Gutierrez worked on
-Nicholas worked on the visuals of GUI in the MainWindow. Functions include the backround color of the GUI, color of button and text on-
-button that says Songiffy, as well as the font size and text of the word Songiffy.
-Jesus Jimenez worked on
+Date: 17th May, 2023
 
-This program changes the pitch of music based on the text you enter in the text box. 
-There is an algorithm that determines the sound based on emotional words used.
-Longer description of this module.
-This program uses an algorithm to determine your mood based on the text you provide in the text box.
-Based on the algorithm results the music will be more low pitch if you are sad and more high pitch if you are happy.
-The text box has a character limit of 300, if you go over the program will give you an error.
-Please press the button above the text box to play the music after you hav written a few words or more with emotion in the text box.
-version.
+Short description:
+This module houses an application that modulates 
+the pitch of music according to the mood deduced 
+from the input text. 
+
+Detailed description:
+The program leverages a sentiment analysis algorithm to evaluate the input text's sentiment analysis. 
+Based on the detected mood, the resultant music varies in pitch; a sadder mood will yield a lower pitch, while a 
+happier mood will produce a higher pitch. The application imposes a 300-character limit on the input text,and 
+exceeding this limit will prompt an error. To initiate the music modulation, provide your input and click the 
+button above the text box. 
+
+Version: 2.0
 """
 
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QTextEdit, QSpinBox, QLabel
