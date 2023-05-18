@@ -23,6 +23,10 @@ Authors: Rafael L.S Reis, Nicholas Garcia, Jesus Jimenez, Daysi Perez Gutierrez
 ### License:
 This program is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for more information.
 
+#extras to add:
+-loading screeen when open 
+-mood ring
+-Media playbutton
 
 contact: rafael.ls.reis@gmail.com
 
