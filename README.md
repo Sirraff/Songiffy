@@ -23,10 +23,10 @@ Authors: Rafael L.S Reis, Nicholas Garcia, Jesus Jimenez, Daysi Perez Gutierrez
 ### License:
 This program is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for more information.
 
-#extras to add:
--loading screeen when open 
--mood ring
--Media playbutton
+# Future Implementations:
+- loading screeen
+- 3D Mood ring(Changes shape and color depending on sentiment analysis)
+- Media player and multiple saves option
 
 contact: rafael.ls.reis@gmail.com
 
