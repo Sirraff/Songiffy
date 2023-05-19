@@ -12,11 +12,11 @@ This program translates the sentiment of text into a musical piece. It uses sent
 * Clone the repo: git clone https://github.com/Sirraff/Songiffy.git
 * Go to the Songiffy directory: cd Songiffy
 * Install the dependencies:
-** pip install PySide6
-** pip install pygame
-** pip install textblob
-** pip install numpy
-** pip install music21
+* * pip install PySide6
+* * pip install pygame
+* * pip install textblob
+* * pip install numpy
+* * pip install music21
 ### Contributing:
 **Contributions to this project are welcome! To contribute:**
 1. Fork this repository.
