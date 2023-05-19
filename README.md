@@ -1,4 +1,7 @@
 # Songiffy
+
+Authors: Rafael L.S Reis, Nicholas Garcia, Jesus Jimenez, Daysi Perez Gutierrez
+
 This program translates the sentiment of text into a musical piece. It uses sentiment analysis to determine the mood of the text and generates a chord progression and melody based on the sentiment, and displays them in a GUI using PySide6.
 ### Dependencies:
 - Python 3.8 or higher
@@ -25,7 +28,6 @@ This program translates the sentiment of text into a musical piece. It uses sent
 3. Make your changes and commit them: git commit -m "Added my feature"
 4. Push your changes to your fork: git push origin my-feature-branch
 5. Create a pull request from your fork to the original repository.
-Authors: Rafael L.S Reis, Nicholas Garcia, Jesus Jimenez, Daysi Perez Gutierrez
 ### License:
 This program is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for more information.
 
