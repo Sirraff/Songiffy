@@ -17,6 +17,7 @@ This program translates the sentiment of text into a musical piece. It uses sent
   * pip install textblob
   * pip install numpy
   * pip install music21
+ * from directory "Songiffy/AlgoRythm" run python3 AlgoRythm2_0.py 
 ### Contributing:
 **Contributions to this project are welcome! To contribute:**
 1. Fork this repository.
